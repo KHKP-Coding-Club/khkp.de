@@ -1,0 +1,30 @@
+<paper-spinner-lite active class="blue" [hidden]="loaded"></paper-spinner-lite>
+
+<div class="content" [hidden]="!loaded">
+  <div class="card-container">
+    <paper-card>
+      <div class="card-content">
+      <h2>Online</h2>
+        <div class="wrap row flex" style="display:flex" *ngFor="let ts of tsOnline | async ">
+          <div>
+            <h3>{{ts.name}}</h3>
+            <p>Online seit: {{ts.since | date:"HH:mm 'Uhr' dd.MM.yyyy"}}</p>
+          </div>
+          <paper-button (click)="openTs(ts.cid)" class="right">Beitreten</paper-button>
+        </div>
+      </div>
+    </paper-card>
+  </div><div class="card-container">
+  <paper-card>
+    <div class="card-content">
+      <h2>Zuletzt Online</h2>
+      <div class="wrap row flex" style="display:flex" *ngFor="let ts of tsAll | async ">
+        <div>
+          <h3>{{ts.name}}</h3>
+          <p>Zuletzt online: {{ts.lastseen*1000 | date:"HH:mm 'Uhr' dd.MM.yyyy "}}</p>
+        </div>
+      </div>
+    </div>
+  </paper-card>
+  </div>
+</div>

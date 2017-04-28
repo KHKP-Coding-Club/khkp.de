@@ -1,0 +1,22 @@
+<paper-spinner-lite active class="blue" [hidden]="loaded"></paper-spinner-lite>
+
+<paper-dialog id="modal" modal *ngIf="loaded">
+  <img src="{{news.img}}">
+  <div class="buttons">
+    <paper-button dialog-confirm autofocus>Schließen</paper-button>
+  </div>
+</paper-dialog>
+
+<div class="content" *ngIf="loaded">
+<div class="card-container">
+    <paper-card image="{{news.img}}" (click)="openDialog()"
+   class="withimg">
+      <div class="card-content">
+        <h2> {{news.title}}</h2>
+        <h3>{{news.content}}</h3>
+        <p>Geschrieben am {{news.time| date:"dd.MM.yyyy',' HH:mm 'Uhr'  "}} von {{news.author}}</p>
+      </div>
+    </paper-card>
+  </div>
+</div>
+

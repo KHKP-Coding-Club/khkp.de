@@ -1,0 +1,61 @@
+.avatar-container {
+  position: relative;
+  border: 2px solid #2196f3;
+  border-radius: 50%;
+  height: 90px;
+  padding: 2px;
+  width: 90px;
+  margin: 20px auto;
+}
+
+.avatar-container .image {
+<!--background-image: url('//app-layout-assets.appspot.com/assets/pesto/avatar.jpg');-->
+  background-size: contain;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.contact-info {
+  margin: 0 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #CCC;
+  text-align: center;
+  height: 26px;
+}
+
+app-header{
+  min-height: 185px;
+}
+
+.contact-info .name {
+  font-weight: bold;
+}
+
+.contact-info .email {
+  color: #999;
+}
+
+paper-item {
+  @apply(--layout-center-center);
+  height: 54px;
+}
+
+paper-icon-button {
+  --paper-icon-button-ink-color: white;
+}
+
+#login {
+  background: white;
+}
+
+paper-toolbar{
+  color: #fff;
+  background-color:  #2196f3;
+}
+
+paper-scroll-header-panel{
+  height: 100vh;
+}
+
+

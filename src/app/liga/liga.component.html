@@ -1,0 +1,25 @@
+<paper-spinner-lite active class="blue" [hidden]="loaded"></paper-spinner-lite>
+
+<div class="content" >
+  <div class="card-container" *ngFor="let item of items | async" (click)="onSelect(item)">
+    <paper-card >
+      <paper-progress value="{{generateArray(item.players).length*20}}"></paper-progress>
+      <!-- <paper-ripple> </paper-ripple>-->
+      <div class="card-content">
+        <h2>Keine Hose Kein Problem - {{item.opponent}}</h2>
+        <p>Am {{item.date| date:"dd.MM.yyyy',' HH:mm 'Uhr'  "}} <span></span></p>
+      </div>
+      <div class="card-actions flex">
+        <div class="horizontal justified">
+          <!--<paper-icon-button icon="icons:event"></paper-icon-button>-->
+          <h2 *ngFor="let player of generateArray(item.players)">{{player?.name}}</h2>
+          <paper-button *ngIf="!isInGame(item)" (click)="join(item)">Beitreten</paper-button>
+          <paper-button *ngIf="isInGame(item)" (click)="leave(item)">Verlassen</paper-button>
+        </div>
+      </div>
+    </paper-card>
+  </div>
+
+</div>
+
+<paper-fab icon="add" routerLink="/newMatch"></paper-fab>

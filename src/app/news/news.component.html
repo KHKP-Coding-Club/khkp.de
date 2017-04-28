@@ -1,0 +1,21 @@
+<!--<ul *ngFor="let item of items | async">
+  <paper-card>Haloo</paper-card>
+  <li>{{item.title}}</li>
+</ul>-->
+
+<paper-spinner-lite active class="blue" [hidden]="loaded"></paper-spinner-lite>
+
+<div class="content" >
+  <div class="card-container" *ngFor="let item of items | async" (click)="onSelect(item)">
+    <paper-card class="link" image="{{item.img}}" >
+      <paper-ripple> </paper-ripple>
+      <div class="card-content">
+        <h2>{{item.title}}</h2>
+        <p>Von <span>{{item.author}}</span></p>
+      </div>
+    </paper-card>
+  </div>
+
+</div>
+
+<paper-fab icon="add" routerLink="/newNews"></paper-fab>

@@ -1,0 +1,26 @@
+<paper-spinner-lite active class="blue" [hidden]="loaded"></paper-spinner-lite>
+
+<div class="content" [hidden]="!loaded">
+  <div class="card-container">
+    <paper-card>
+      <div class="card-content">
+        <canvas id="wheel" width="400" height="400"></canvas>
+
+      </div>
+    </paper-card>
+  </div><div class="card-container">
+  <paper-card>
+    <div class="card-content">
+      <h2>Ist dabei sein Skins zu verlieren:</h2>
+      <div class="wrap row flex" style="display:flex">
+        <div>
+          <h3>Chris</h3>
+          <p>10 Skins gesetzt!</p>
+        </div>
+      </div>
+      <paper-button (click)="draw()">Los geht´s!</paper-button>
+    </div>
+  </paper-card>
+</div>
+
+</div>

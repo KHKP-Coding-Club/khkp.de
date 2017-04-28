@@ -1,0 +1,19 @@
+{
+  "name": "khkp-online",
+  "description": "",
+  "main": "",
+  "authors": [
+    "fdaugs <fabian.daugs@smail.th-koeln.de>"
+  ],
+  "directory": "src/bower_components/",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

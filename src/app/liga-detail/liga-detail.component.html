@@ -1,0 +1,20 @@
+<div class="content">
+  <div class="card-container">
+    <paper-card>
+      <div class="inputContainer">
+
+        <h2>Neues Match anlegen</h2>
+        <!--<vaadin-combo-box [items]="days"
+                          item-label-path="name"
+                          item-value-path="number"
+                          [(value)]="value"></vaadin-combo-box>-->
+        <!--<vaadin-combo-box [items]="hours"></vaadin-combo-box>-->
+        <vaadin-date-picker id="datePicker" required autofocus auto-validate error-message="Bitte ausfüllen!"  label="Datum" [(value)]="date"></vaadin-date-picker>
+        <paper-input id="zeit" label="Uhrzeit" required auto-validate error-message="Bitte ausfüllen!" [(value)]="time"></paper-input>
+        <paper-input id="gegner" label="Gegner" required auto-validate error-message="Bitte ausfüllen!" [(value)]="opponent"></paper-input>
+        <paper-button (click)="validate()">Veröffentlichen</paper-button>
+      </div>
+    </paper-card>
+  </div>
+</div>
+

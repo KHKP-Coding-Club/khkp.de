@@ -1,0 +1,36 @@
+<paper-tabs selected="{{selected}}" (selected-changed)="tabChanged($event)">
+  <paper-tab>Daten</paper-tab>
+  <paper-tab>Link</paper-tab>
+</paper-tabs>
+<div class="content">
+<iron-pages selected="{{selected}}">
+    <div class="card-container">
+      <paper-card image="{{imgUrl}}">
+        <div class="inputContainer">
+
+          <h2>Accountdaten ändern</h2>
+          <vaadin-upload id="upload" max-files="1" accept="image/*" max-file-size="1000000" (change)="filebuttoni($event)">
+            <div class="drop-label">
+              Bitte Profilbild auswählen
+            </div>
+          </vaadin-upload>
+          <paper-input id="username" label="Benutzername" required auto-validate autofocus error-message="Bitte ausfüllen!"></paper-input>
+          <paper-button (click)="validate()">Ändern</paper-button>
+        </div>
+        <!--<paper-toggle-button></paper-toggle-button>-->
+      </paper-card>
+    </div>
+  <div class="card-container">
+    <paper-card>
+      <div class="inputContainer">
+
+        <h2>Steam</h2>
+        <paper-input id="tradeurl" label="Trade URL" required auto-validate autofocus error-message="Bitte ausfüllen!"></paper-input>
+        <paper-button (click)="saveSteam()">Speichern</paper-button>
+      </div>
+      <!--<paper-toggle-button></paper-toggle-button>-->
+    </paper-card>
+  </div>
+</iron-pages>
+</div>
+

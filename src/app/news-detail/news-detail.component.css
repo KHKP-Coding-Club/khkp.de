@@ -1,0 +1,38 @@
+.card-container {
+  display: inline-block;
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  vertical-align: top;
+}
+
+paper-card {
+  display: block;
+  margin: 5px;
+
+  --paper-card-header-image: {
+    height: 200px;
+  };
+
+
+}
+
+paper-card h2 {
+  margin: 4px;
+  font-weight: normal;
+}
+
+paper-card h3 {
+  margin: 4px;
+  font-weight: normal;
+}
+
+paper-card p {
+  margin: 4px;
+  color: #999;
+}
+
+#modal img{
+  max-height: 75vh;
+  max-width: 75vh;
+}

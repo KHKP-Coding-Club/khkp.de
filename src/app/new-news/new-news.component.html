@@ -1,0 +1,18 @@
+<div class="content">
+  <div class="card-container">
+  <paper-card>
+    <div class="inputContainer">
+
+      <h2>Neuen Artikel anlegen</h2>
+      <vaadin-upload id="upload" max-files="1" accept="image/*" max-file-size="1000000" (change)="filebuttoni($event)">
+        <div class="drop-label">
+          Bitte Titelbild auswählen
+        </div>
+      </vaadin-upload>
+    <paper-input id="title" label="Titel" required auto-validate autofocus error-message="Bitte ausfüllen!"></paper-input>
+    <paper-textarea id="text" rows="10" label="Text" char-counter maxlength="400" required autocomplete autocorrect auto-validate error-message="Bitte ausfüllen!"></paper-textarea>
+    <paper-button (click)="validate()">Veröffentlichen</paper-button>
+    </div>
+  </paper-card>
+  </div>
+</div>

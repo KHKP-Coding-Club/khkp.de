@@ -1,0 +1,47 @@
+paper-tabs{
+  background-color: #2196f3;
+  color: #fff;
+}
+/*paper-tabs:first-child{
+  padding-left: 24px;
+}*/
+paper-tab{
+  flex:none;
+  -webkit-flex: none;
+  padding: 0 16px;
+}
+
+paper-card h2 {
+  font-weight: normal;
+}
+
+paper-card{
+  width: 100%;
+}
+paper-button{
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+paper-textarea, paper-input, vaadin-upload{
+  margin-top: 20px;
+}
+
+.inputContainer{
+  padding: 0 4vw 4vw;
+}
+
+@media (max-width: 720px) {
+
+  paper-card {
+    width: 100%;
+    margin: 0;
+  }
+
+  .content{
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+

@@ -1,0 +1,23 @@
+<paper-spinner-lite active class="blue" [hidden]="loaded"></paper-spinner-lite>
+
+<div class="content" [hidden]="!loaded">
+  <div class="card-container">
+    <paper-card>
+      <div class="card-content">
+        <h2>Smurfs</h2>
+        <div class="wrap row flex" style="display:flex" *ngFor="let smurf of smurfs | async ">
+          <div>
+            <h3>Name: {{smurf.username}}, Passwort: {{smurf.passwd}}</h3>
+            <!--<p>Online seit: {{ts.since | date:"HH:mm 'Uhr' dd.MM.yyyy"}}</p>-->
+            <p *ngIf="smurf.borrowedByName">Ausgeliehen von {{smurf.borrowedByName}}</p>
+            <p *ngIf="!smurf.borrowedByName">Frei</p>
+          </div>
+          <paper-button *ngIf="user.uid !== smurf.borrowedBy" [disabled]="smurf.borrowedBy" (click)="borrow(smurf.secret, smurf.$key)" class="right">Ausleihen</paper-button>
+            <h3 id="authCode" *ngIf="user.uid  == smurf.borrowedBy" >{{authCode}}</h3>
+            <paper-icon-button icon="refresh" *ngIf="user.uid  == smurf.borrowedBy" (click)="getAuthCode(smurf.secret)"></paper-icon-button>
+          <paper-button *ngIf="user.uid  == smurf.borrowedBy" (click)="handBack(smurf.$key)">Zurückgeben</paper-button>
+        </div>
+      </div>
+    </paper-card>
+  </div>
+</div>

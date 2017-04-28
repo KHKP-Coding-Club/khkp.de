@@ -1,0 +1,44 @@
+<paper-spinner-lite active class="blue" [hidden]="loaded"></paper-spinner-lite>
+<div [hidden]="!loaded">
+<paper-toast id="toast"></paper-toast>
+<app-drawer-layout responsive-width="1280px" *ngIf="showApp" style="height: 100%">
+      <!-- nav panel -->
+      <app-drawer id="drawer" opened="{{drawerOpened}}" swipe-open>
+        <app-header-layout has-scrolling-region>
+
+          <app-header fixed routerLink="/account"  class="link" (click)="drawerSelected()">
+            <div class="avatar-container">
+              <img src="{{user?.photoURL}}" class="image">
+            </div>
+            <div class="contact-info">
+              <div class="name">{{user?.displayName}}</div>
+              <div class="email">{{user?.email}}</div>
+            </div>
+          </app-header>
+
+          <!-- nav menu -->
+          <paper-listbox
+            (click)="drawerSelected()">
+            <paper-item class="link" name="News" routerLink="/news">News</paper-item>
+            <paper-item class="link" name="skindump" routerLink="/skindump">Skin Dump</paper-item>
+            <paper-item class="link" name="Teamspeak" routerLink="/teamspeak">Teamspeak</paper-item>
+            <paper-item class="link" name="99damage" routerLink="/liga">99Damage</paper-item>
+            <paper-item class="link" name="smurfs" routerLink="/smurfs" >Smurfs</paper-item>
+
+          </paper-listbox>
+        </app-header-layout>
+      </app-drawer>
+   <paper-scroll-header-panel fixed>
+   <paper-toolbar>
+     <paper-icon-button icon="arrow-back" *ngIf="isInChildView" (click)="goBack()"></paper-icon-button>
+     <paper-icon-button icon="menu" *ngIf="!isInChildView" drawer-toggle></paper-icon-button>
+     <div class="title">{{title}}</div>
+     <!--<paper-icon-button icon="more-vert" ></paper-icon-button>-->
+     <paper-icon-button (click)="logout()"  *ngIf="loggedIn" icon="exit-to-app" ></paper-icon-button>
+   </paper-toolbar>
+   <router-outlet></router-outlet>
+   </paper-scroll-header-panel>
+    </app-drawer-layout>
+ <paper-button raised (click)="loginGoogle()" *ngIf="!loggedIn" id="login">Login with Google</paper-button>
+ <h1 *ngIf="loggedIn && !access">Nich validiert!</h1>
+</div>
